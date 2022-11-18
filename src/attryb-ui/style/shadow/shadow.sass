@@ -1,0 +1,62 @@
+@mixin shadow-small
+    box-shadow: 0 .17rem 0.33rem 0 rgba(23, 43, 77, 0.20)
+
+@mixin shadow-small--hover
+    box-shadow: 0 .17rem 0.33rem 0 rgba(23, 43, 77, 0.40)
+
+@mixin shadow-medium
+    box-shadow: 0 0.67rem 1rem 0 rgba(23, 43, 77, 0.16)
+
+@mixin shadow-medium--hover
+    box-shadow: 0 0.67rem 1rem 0 rgba(23, 43, 77, 0.32)
+
+@mixin shadow-large
+    box-shadow: 0 1.33rem 1.33rem 0 rgba(23, 43, 77, 0.12)
+
+@mixin shadow-large--hover
+    box-shadow: 0 1.33rem 1.33rem 0 rgba(23, 43, 77, 0.24)
+
+@mixin shadow-dropdown
+    box-shadow: 0 0.67rem 1rem 0 rgba(23, 43, 77, 0.32)
+
+@mixin shadow-btn
+    box-shadow: 0 0.17rem 0.17rem -0.1rem rgba(23, 43, 77, 0.4)
+
+@mixin shadow-btn--hover
+    box-shadow: 0 0.17rem 0.33rem -0.1rem rgba(23, 43, 77, 0.6)
+
+@mixin shadow-btn--active
+    box-shadow: 0 0.1rem 0.1rem -0.1rem rgba(23, 43, 77, 0.8)
+
+@mixin shadow-content-block
+    box-shadow: 0 .17rem 1rem 0 rgba(23, 43, 77, 0.24)
+
+@mixin shadow-content-block--hover
+    box-shadow: 0 .17rem 1rem 0 rgba(23, 43, 77, 0.32)
+
+.shadow-small
+    @include shadow-small
+
+.shadow-medium
+    @include shadow-medium
+
+.shadow-large
+    @include shadow-large
+
+.shadow-dropdown
+    @include shadow-dropdown
+
+.shadow-content-block
+    @include shadow-content-block
+
+    &:hover
+        @include shadow-content-block--hover
+
+.shadow-button
+    @include shadow-btn
+
+    &:hover
+        @include shadow-btn--hover
+
+    &:active
+        @include shadow-btn--active

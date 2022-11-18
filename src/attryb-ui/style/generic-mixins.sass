@@ -1,0 +1,31 @@
+@mixin button-base
+    @include font-button
+    @include shadow-btn
+
+    border-radius: 0.33rem // For some weird reasons, spacing vars are not working, although typography vars are!
+    box-shadow: 0 0.33rem 0.33rem 0 rgba(23, 43, 77, 0.12)
+    transition: all 200ms ease-in-out
+
+    font-weight: 500
+    cursor: pointer
+    padding: 0.67rem 1rem // For some weird reasons, spacing vars are not working, although typography vars are!
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    gap: .67rem // For some weird reasons, spacing vars are not working, although typography vars are!
+
+    &:hover
+        @include shadow-btn--hover
+
+    &:active
+        @include shadow-btn--active
+
+@mixin flex($direction, $align, $justify)
+    display: flex
+    flex-direction: $direction
+    align-items: $align
+    justify-content: $justify
+    align-self: stretch
+
+@mixin default-transition
+    transition: all 200ms ease-in-out

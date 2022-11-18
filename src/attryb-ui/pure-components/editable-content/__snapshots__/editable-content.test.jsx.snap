@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Base states of Editable Content Block component Should render correctly 1`] = `
+<div
+  className="EditableContent"
+  contentEditable={true}
+  dangerouslySetInnerHTML={
+    {
+      "__html": "Lorem ipsum",
+    }
+  }
+  data-edit={true}
+  data-gramm_editor={false}
+  data-testid="editable-content"
+  onInput={[Function]}
+  spellCheck="false"
+  suppressContentEditableWarning={true}
+/>
+`;

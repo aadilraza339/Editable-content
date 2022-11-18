@@ -1,0 +1,155 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs"
+import ExampleShadow from "../../../helper-components/ExampleShadow/ExampleShadow.jsx"
+
+<Meta title="Fundamentals/ Shadow" component={ExampleShadow} />
+
+export const Template = (args) => <ExampleShadow {...args} />
+
+# Importing shadows styling
+
+<div style={{fontWeight: 500, color: "#E91E63", fontSize: "2rem", padding: "1rem 0", background: "#FFF", borderRadius: "0.33rem"}}>
+    @import "attryb-ui/shadow"
+</div>
+
+---
+
+# Standard Shadows
+
+Standard shadows are meant to be used on card components only. Their purpose is the communicate the z-index of card.
+
+**Sass Mixins - Default State:** `@include shadow-small` `@include shadow-medium` `@include shadow-large`
+
+---
+
+On hover, if component is not to be appeared raised, one can also darken the same shadow. Just set the alpha of this shadow color to be twice. 
+
+_For example:_ In shadow medium, by default shadow color is `rgba(23, 43, 77, 0.16)`, to darken it, double the alpha channel of this color, i.e make it to `rgba(23, 43, 77, 0.32)`. Use hover state mixins to achieve this.
+
+**Sass Mixins - Hover State:** `@include shadow-small--hover` `@include shadow-medium--hover` `@include shadow-large--hover`
+
+> Applying `:hover` state to standard shadows is **not** mandatory.
+
+### Shadow small
+``` css
+.shadow-small
+    box-shadow: 0 .17rem 0.33rem 0 rgba(23, 43, 77, 0.20)
+
+    &:hover
+        box-shadow: 0 .17rem 0.33rem 0 rgba(23, 43, 77, 0.40)
+```
+
+### Shadow medium
+``` css
+.shadow-medium
+    box-shadow: 0 0.67rem 1rem 0 rgba(23, 43, 77, 0.16)
+    
+    &:hover
+        box-shadow: 0 0.67rem 1rem 0 rgba(23, 43, 77, 0.32)
+```
+
+### Shadow large
+``` css
+.shadow-large
+    box-shadow: 0 1.33rem 1.33rem 0 rgba(23, 43, 77, 0.12)
+    
+    &:hover
+        box-shadow: 0 1.33rem 1.33rem 0 rgba(23, 43, 77, 0.24)
+```
+
+<Canvas>
+    <Story
+        name="Standard Shadow/ Small"
+        args={{
+            size: "sm",
+            type: "standard"
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="Standard Shadow/ Medium"
+        args={{
+            size: "md",
+            type: "standard"
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story
+        name="Standard Shadow/ Large"
+        args={{
+            size: "lg",
+            type: "standard"
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+# Dropdown Shadows
+
+To be used on dropdown container only.  
+
+**Sass Mixin:** `@include shadow-dropdown` 
+
+``` css
+.shadow-dropdown
+    box-shadow: 0 1.33rem 1.33rem 0 rgba(23, 43, 77, 0.12)
+```
+
+<Canvas>
+    <Story 
+        name="Dropdown Shadow"
+        args={{
+            type: "dropdown"
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+
+# Button Shadows
+
+To be used on button components only.  
+
+**Sass Mixin:** `@include shadow-button` 
+
+``` css
+.shadow-button
+    box-shadow: 0 0.33rem 0.33rem 0 rgba(23, 43, 77, 0.12)
+    &:hover
+        box-shadow: 0 0.33rem 0.33rem 0 rgba(23, 43, 77, 0.24)
+    &:active
+        box-shadow: 0 0.1rem 0.1em 0 rgba(23, 43, 77, 0.24)
+```
+
+<Canvas>
+    <Story 
+        name="Button Shadow/ Default"
+        args={{
+            type: "button",
+            state: "default"
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story 
+        name="Button Shadow/ Hover"
+        args={{
+            type: "button",
+            state: "hover"
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story 
+        name="Button Shadow/ Active"
+        args={{
+            type: "button",
+            state: "active"
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

@@ -1,0 +1,48 @@
+.InputField,
+.InputField[data-state="default"]
+    @include font-body
+
+    color: var(--color-black-standard)
+    border-radius: 0.33rem
+    transition: all 200ms ease-in-out
+    border: 1px solid var(--color-black-subdued)
+    outline: 1px solid transparent
+    width: 100%
+    background: #fff
+
+    padding: 0.67rem 1rem
+    display: inline-flex
+    align-items: center
+    justify-content: flex-start
+
+    &:focus-visible,
+    &:focus
+        border: 1px solid var(--color-primary-standard)
+        outline: none
+
+    &::placeholder
+        @include font-body
+        color: var(--color-black-subdued)
+
+.InputField[data-state="active"]
+    border: 1px solid var(--color-primary-standard)
+
+    &:focus-visible,
+    &:focus
+        border: 1px solid var(--color-primary-standard)
+        outline: none
+
+.InputField[data-state="error"]
+    border: 1px solid var(--color-danger-standard)
+    color: var(--color-danger-standard)
+
+    &:focus-visible,
+    &:focus
+        border: 1px solid var(--color-danger-standard)
+        outline: none
+
+.InputField[disabled]
+    border: 1px solid var(--color-white-dark)
+    background: var(--color-white-light)
+    color: var(--color-black-subdued)
+    cursor: not-allowed

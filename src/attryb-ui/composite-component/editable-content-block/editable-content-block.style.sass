@@ -1,0 +1,146 @@
+.EditableContentBlock
+    @include font-body
+    @include flex(column, flex-start, flex-start)
+
+    --bullet-dim: .5rem
+    --bullet-offset-factor: 0.8
+
+    gap: 0
+    padding: 1rem
+    border-radius: .67rem
+    border: 1px solid transparent
+    position: relative
+    z-index: 0
+    outline: none
+    background: var(--color-white-faint)
+    width: 100%
+
+    &[data-editing="false"]
+        border-color: transparent
+        box-shadow: none
+
+    &[data-editing="true"]
+        border: 1px solid transparent
+        z-index: 2
+
+    &:active,
+    &:focus,
+    &:focus-visible
+        outline: none
+
+    &[data-error="true"]
+        border: 1px solid var(--color-danger-standard)
+
+    &[data-error="false"][data-empty="true"][data-editing="false"]
+        background-color: var(--color-white-light)
+
+    &[data-error="true"][data-empty="true"][data-editing="false"],
+    &[data-error="true"][data-empty="false"][data-editing="false"]
+        background-color: var(--color-danger-faint)
+        border: 1px solid var(--color-danger-subdued)
+
+    .EditableContentBlockWrapper
+        @include flex(row, flex-start, flex-start)
+
+        gap: .67rem
+        border: 1px solid blue
+        padding: 2rem
+
+    .EditableContent
+        padding: 0
+
+        min-height: 1.33rem
+        width: 100%
+
+    .EditableContent
+        @include font-body
+
+        display: inline-block
+        border: 1px solid transparent
+        overflow-wrap: anywhere
+        cursor: text
+
+        &,
+        &:focus-visible,
+        &:active,
+        &:focus
+            outline: none
+            border: none
+
+        ul, ol
+            margin: 0
+            padding: 0 0 0 1rem
+
+    .EditableContentBlockFooter
+        @include font-caption
+        @include flex(row, baseline, flex-end)
+
+        color: var(--color-black-light)
+        border-top: 1px solid var(--color-white-standard)
+        padding: .67rem 0
+        height: auto
+        position: relative
+        top: .83rem
+        gap: 1rem
+
+        .chars
+            color: var(--color-black-standard)
+
+        &[data-twocols="true"]
+            justify-content: space-between
+
+        &[data-save="true"]
+            padding: .33rem 0
+
+        .message
+            @include flex(row, center, flex-end)
+            gap: .33rem
+
+            span
+                width: fit-content
+
+        .error-message
+            @include font-caption
+
+            display: inline-flex
+            color: var(--color-danger-standard)
+
+.EditableContentBlockWrapper[data-contenttype="unordered-list"]
+    .EditableContent
+        & > div
+            position: relative
+            margin: 0 0 .67rem 0
+            padding-left: 1.33rem
+
+        & > div:last-child
+            margin-bottom: 0
+
+        & > div::before
+            content: ""
+            height: var(--bullet-dim)
+            width: var(--bullet-dim)
+            background: var(--color-black-subdued)
+            border-radius: 100%
+            position: absolute
+            left: 0
+            top: calc( var(--bullet-offset-factor) * var(--bullet-dim))
+
+.EditableContentBlockWrapper[data-contenttype="ordered-list"]
+    .EditableContent
+        counter-reset: numerical-counter 0
+
+        & > div
+            position: relative
+            margin: 0 0 .67rem 0
+            padding-left: 1.33rem
+            counter-increment: numerical-counter
+
+        & > div:last-child
+            margin-bottom: 0
+
+        & > div::before
+            content: counter(numerical-counter) "."
+            border-radius: 100%
+            position: absolute
+            left: 0
+            top: 0

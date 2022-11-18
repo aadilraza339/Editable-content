@@ -1,0 +1,51 @@
+.Switch
+    @include font-body
+    @include flex(row, center, flex-start)
+
+    gap: 1rem
+
+    &,
+    &[data-size="md"]
+        --switch-height: 1.33rem
+
+    &[data-size="sm"]
+        --switch-height: 1rem
+        --switch-padding: 0.12rem
+        --switch-btn-diam: calc(0.75 * var(--switch-height))
+
+    &[data-size="lg"]
+        --switch-height: 2rem
+
+    &
+        --switch-width: calc(1.75 * var(--switch-height))
+        --switch-padding: 0 .17rem
+        --switch-btn-diam: calc(0.8 * var(--switch-height))
+
+    .text-muted
+        color: var(--color-black-light)
+
+    .SwitchToggle
+        @include default-transition
+
+        width: var(--switch-width)
+        height: var(--switch-height)
+        border-radius: 100rem
+        padding: var(--switch-padding)
+        display: flex
+        align-items: center
+        cursor: pointer
+
+        &[data-state="true"]
+            background-color: var(--color-secondary-standard)
+            justify-content: flex-end
+
+        &[data-state="false"]
+            background-color: var(--color-white-dark)
+            justify-content: flex-start
+
+        .SwitchToggleBtn
+            width: var(--switch-btn-diam)
+            height: var(--switch-btn-diam)
+            background-color: var(--color-white-faint)
+            border-radius: 200rem
+            box-shadow: .08rem .17rem .25rem rgba(0, 0, 0, 0.07)

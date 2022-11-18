@@ -1,0 +1,47 @@
+<!-- Typography.stories.mdx -->
+
+import { Meta, Typeset } from "@storybook/addon-docs/blocks"
+
+<Meta title="Fundamentals/ Spacing/ Global" />
+
+export const spacing = {
+    none: 0,
+    xs: 4,
+    s: 8,
+    df: 12,
+    m: 16,
+    l: 20,
+    xl: 24,
+    xxl: 32,
+    max: 40,
+}
+
+export const SampleText = "The quick brown fox jumps over the lazy dog."
+
+# Importing spacing styling
+
+<div style={{fontWeight: 500, color: "#E91E63", fontSize: "2rem", padding: "1rem 0", background: "#FFF", borderRadius: "0.33rem"}}>
+    @import "attryb-ui/spacing.sass"
+</div>
+
+---
+
+# How to choose spacing?
+
+Use less space between small components, or components that share a close functional relationship.
+
+Coordinate small and large values, along with structural components (like Home cards), to create visual groupings of related things. This helps users understand the interface and more easily find what they’re looking for. For screens with specialized layouts, adjust overall spacing based on the density of the content. For example, a simple login screen on desktop display has more room to breathe, so more space can be used.
+
+## Summary
+
+| Spacing | Naming  |  :root variable  |  ClassNames for Gap | ClassNames for Margins | ClassNames for Paddings |  
+| :- | :- | :- | :- | :- | :- | 
+| 0 | None |  --spacing-none | .g-0 | .m-0, .mt-0, .mr-0, .mb-0, .ml-0 | .p-0, .pt-0, .pr-0, .pb-0, .pl-0|
+| 4px / .33rem | Extra small |  --spacing-xs | .g-xs | .m-xs, .mt-xs, .mr-xs, .mb-xs, .ml-xs | .p-xs, .pt-xs, .pr-xs, .pb-xs, .pl-xs|
+| 8px / .67rem | Small |  --spacing-s | .g-s | .m-s, .mt-s, .mr-s, .mb-s, .ml-s | .p-s, .pt-s, .pr-s, .pb-s, .pl-s|
+| 12px / 1rem | Default |  --spacing-df | .g-df | .m-df, .mt-df, .mr-df, .mb-df, .ml-df | .p-df, .pt-df, .pr-df, .pb-df, .pl-df|
+| 16px / 1.33rem | Medium |  --spacing-m | .g-m | .m-m, .mt-m, .mr-m, .mb-m, .ml-m | .p-m, .pt-m, .pr-m, .pb-m, .pl-m|
+| 20px / 1.67rem | Large |  --spacing-l | .g-l | .m-l, .mt-l, .mr-l, .mb-l, .ml-l | .p-l, .pt-l, .pr-l, .pb-l, .pl-l|
+| 24px / 2rem | Extra large |  --spacing-xl | .g-xl | .m-xl, .mt-xl, .mr-xl, .mb-xl, .ml-xl | .p-xl, .pt-xl, .pr-xl, .pb-xl, .pl-xl|
+| 32px / 2.67rem | Extra extra large |  --spacing-xxl | .g-xxl | .m-xxl, .mt-xxl, .mr-xxl, .mb-xxl, .ml-xxl | .p-xxl, .pt-xxl, .pr-xxl, .pb-xxl, .pl-xxl|
+| 40px/ 3.33rem | Maximum |  --spacing-max | .g-max | .m-max, .mt-max, .mr-max, .mb-max, .ml-max | .p-max, .pt-max, .pr-max, .pb-max, .pl-max|

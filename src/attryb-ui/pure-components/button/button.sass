@@ -1,0 +1,265 @@
+.Button
+    @include button-base
+    @include shadow-btn
+
+    width: fit-content
+
+    &:focus,
+    &:focus-visible
+        outline: none
+
+    &:active,
+    &[data-pressed="true"]
+        @include shadow-btn--active
+
+        border: 1px solid var(--color-secondary-dark)
+        background-color: var(--color-secondary-dark)
+        transform: translateY(0.1rem)
+
+    &[data-pressed="true"]
+        box-shadow: none
+
+// Styling Size
+.Button
+    &[data-size="sm"]
+        font-size: var(--font-size-small)
+        line-height: var(--font-line-height-small)
+        padding: 0.33rem 0.67rem
+
+        &[data-variant="round"],
+        &[data-variant="icon-only"]
+            width: 2.113rem
+            height: 2.113rem
+
+            svg
+                font-size: calc(var(--font-size-small) + 0.17rem)
+
+        .spinner-icon
+            font-size: var(--font-line-height-small)
+
+    &[data-size="lg"]
+        font-size: var(--font-size-subheading)
+        line-height: var(--font-line-height-subheading)
+        padding: 1rem 1.33rem
+
+        &[data-variant="round"],
+        &[data-variant="icon-only"]
+            width: 3.795rem
+            height: 3.795rem
+
+            svg
+                font-size: calc(var(--font-size-subheading) + 0.17rem)
+
+        .spinner-icon
+            font-size: var(--font-line-height-subheading)
+
+// Styling Color Scheme
+    .Button
+        &[data-variant="primary"]
+
+// Stylign Variants
+.Button
+    &[data-variant="solid"]
+        color: var(--color-white-faint)
+
+    &[data-variant="link"]
+        @include default-transition
+
+        color: var(--color-primary-standard)
+        background-color: transparent
+        border: none
+        box-shadow: none
+
+        &:hover
+            background-color: var(--color-primary-faint)
+
+        &:active,
+        &[data-pressed="true"]
+            box-shadow: none
+            border: none
+            background-color: var(--color-primary-subdued)
+            transform: translateY(0.1rem)
+
+    &[data-variant="subtle"]
+        background-color: var(--color-white-faint)
+        border: 1px solid var(--color-white-standard)
+
+        &:active,
+        &[data-pressed="true"]
+            background-color: var(--color-white-light)
+            border: 1px solid var(--color-white-light)
+
+    &[data-variant="outline"]
+        background-color: transparent
+        box-shadow: none
+
+    &[data-variant="round"]
+        background-color: var(--color-white-faint)
+        border: 1px solid var(--color-white-standard)
+        height: 3.135rem
+        width: 3.135rem
+        padding: 0
+        line-height: 1
+        border-radius: 9999px
+
+        svg
+            font-size: calc(var(--font-size-button) + 0.17rem)
+
+        &[data-pressed="true"]
+            background-color: var(--color-white-light)
+            border: 1px solid var(--color-white-light)
+
+    &[data-variant="icon-only"]
+        border: none
+        box-shadow: none
+        height: 3.135rem
+        width: 3.135rem
+        padding: 0
+        line-height: 1
+        border-radius: 9999px
+
+        svg
+            font-size: calc(var(--font-size-button) + 0.17rem)
+
+        &:hover
+            background-color: var(--color-white-light)
+
+// Styling variants and their color schemes
+.Button
+    &[data-variant="solid"][data-colorscheme="primary"]
+        background-color: var(--color-secondary-standard)
+        border: 1px solid var(--color-secondary-standard)
+
+        &:active,
+        &[data-pressed="true"]
+            background-color: var(--color-secondary-dark)
+            border: 1px solid var(--color-secondary-dark)
+
+    &[data-variant="solid"][data-colorscheme="success"]
+        background-color: var(--color-secondary-standard)
+        border: 1px solid var(--color-secondary-standard)
+
+        &:active,
+        &[data-pressed="true"]
+            background-color: var(--color-secondary-dark)
+            border: 1px solid var(--color-secondary-dark)
+
+    &[data-variant="solid"][data-colorscheme="warning"]
+        background-color: var(--color-warning-standard)
+        border: 1px solid var(--color-warning-standard)
+
+        &:active,
+        &[data-pressed="true"]
+            background-color: var(--color-warning-dark)
+            border: 1px solid var(--color-warning-dark)
+
+    &[data-variant="solid"][data-colorscheme="danger"]
+        background-color: var(--color-danger-standard)
+        border: 1px solid var(--color-danger-standard)
+
+        &:active,
+        &[data-pressed="true"]
+            background-color: var(--color-danger-dark)
+            border: 1px solid var(--color-danger-dark)
+
+    &[data-variant="subtle"][data-colorscheme="primary"]
+        color: var(--color-primary-standard)
+
+    &[data-variant="subtle"][data-colorscheme="success"]
+        color: var(--color-success-standard)
+
+    &[data-variant="subtle"][data-colorscheme="warning"]
+        color: var(--color-warning-standard)
+
+    &[data-variant="subtle"][data-colorscheme="danger"]
+        color: var(--color-danger-standard)
+
+    &[data-variant="outline"][data-colorscheme="primary"]
+        color: var(--color-primary-standard)
+        border: 1px solid var(--color-primary-standard)
+
+        &:active,
+        &[data-pressed="true"]
+            background-color: var(--color-primary-faint)
+
+    &[data-variant="outline"][data-colorscheme="success"]
+        color: var(--color-success-standard)
+        border: 1px solid var(--color-success-standard)
+
+        &:active,
+        &[data-pressed="true"]
+            background-color: var(--color-success-faint)
+
+    &[data-variant="outline"][data-colorscheme="warning"]
+        color: var(--color-warning-standard)
+        border: 1px solid var(--color-warning-standard)
+
+        &:active,
+        &[data-pressed="true"]
+            background-color: var(--color-warning-faint)
+
+    &[data-variant="outline"][data-colorscheme="danger"]
+        color: var(--color-danger-standard)
+        border: 1px solid var(--color-danger-standard)
+
+        &:active,
+        &[data-pressed="true"]
+            background-color: var(--color-danger-faint)
+
+    &[data-variant="round"][data-colorscheme="primary"]
+        color: var(--color-primary-standard)
+
+    &[data-variant="round"][data-colorscheme="success"]
+        color: var(--color-success-standard)
+
+    &[data-variant="round"][data-colorscheme="warning"]
+        color: var(--color-warning-standard)
+
+    &[data-variant="round"][data-colorscheme="danger"]
+        color: var(--color-danger-standard)
+
+    &[data-variant="icon-only"]
+        color: var(--color-black-standard)
+        background-color: transparent
+
+        &:active,
+        &[data-pressed="true"]
+            transform: none
+            color: var(--color-primary-standard)
+            background-color: var(--color-primary-faint)
+
+// Styling State
+.Button
+    &[data-state="disabled"]
+        background-color: var(--color-white-standard) !important
+        color: var(--color-black-subdued) !important
+        border: 1px solid var(--color-white-standard) !important
+        box-shadow: none
+        cursor: not-allowed
+
+        &[data-variant="icon-only"]
+            background: transparent !important
+            border: none !important
+
+        &:hover
+            box-shadow: none
+
+        &:active,
+        &[data-pressed="true"]
+            @include shadow-btn--active
+
+            box-shadow: none
+            border: 1px solid var(--color-white-standard)
+            background-color: var(--color-white-standard)
+            transform: none
+
+    &[data-state="loading"]
+        box-shadow: none
+
+        .LoadingIcon
+            height: calc(var(--font-size-button) + 0.33rem)
+            width: auto
+
+        &:hover,
+        &:active
+            box-shadow: none

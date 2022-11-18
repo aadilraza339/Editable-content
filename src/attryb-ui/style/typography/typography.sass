@@ -1,0 +1,194 @@
+
+
+:root
+    --font-weight-bold: 700
+    --font-weight-medium: 500
+    --font-weight-regular: 400
+
+    --font-size-h1: 3rem
+    --font-size-h2: 2rem
+    --font-size-h3: 1.67rem
+    --font-size-h4: 1.42rem
+    --font-size-subheading: 1.17rem
+    --font-size-button: 1rem
+    --font-size-body: 1rem
+    --font-size-small: .83rem
+
+    --font-line-height-h1: 3.25rem
+    --font-line-height-h2: 2.33rem
+    --font-line-height-h3: 2rem
+    --font-line-height-h4: 1.67rem
+    --font-line-height-subheading: 1.33rem
+    --font-line-height-button: 1.33rem
+    --font-line-height-body: 1.33rem
+    --font-line-height-small: 1rem
+
+    --base-fontsize-web: 12px
+    --base-fontsize-ipad: 1vw
+    --base-fontsize-mobile: 3.75vw
+
+html
+    font-size: var(--base-fontsize-web)
+
+.weight-bold
+    font-weight: var(--font-weight-bold) !important
+
+.weight-medium
+    font-weight: var(--font-weight-medium) !important
+
+.weight-regular
+    font-weight: var(--font-weight-regular) !important
+
+.text-uppercase 
+    text-transform: uppercase
+
+.text-capitalize 
+    text-transform: capitalize
+
+/* In our typography definition, there's no H5 and H6 */
+@mixin display-xl
+    font-family: "Inter"
+    font-style: normal
+    font-size: var(--font-size-h1)
+    line-height: var(--font-line-height-h1)
+    font-weight: var(--font-weight-medium)
+
+
+@mixin display-l
+    font-family: "Inter"
+    font-style: normal
+    font-size: var(--font-size-h2)
+    line-height: var(--font-line-height-h2)
+    font-weight: var(--font-weight-medium)
+
+@mixin display-m
+    font-family: "Inter"
+    font-style: normal
+    font-size: var(--font-size-h3)
+    line-height: var(--font-line-height-h3)
+    font-weight: var(--font-weight-regular)
+
+@mixin display-s
+    font-family: "Inter"
+    font-style: normal
+    font-size: var(--font-size-h4)
+    line-height: var(--font-line-height-h4)
+    font-weight: var(--font-weight-regular)
+
+@mixin page-heading
+    font-family: "Inter"
+    font-style: normal
+    font-size: var(--font-size-h3)
+    line-height: var(--font-line-height-h3)
+    font-weight: var(--font-weight-bold)
+    
+@mixin heading
+    font-family: "Inter"
+    font-style: normal
+    font-size: var(--font-size-h4)
+    line-height: var(--font-line-height-h4)
+    font-weight: var(--font-weight-medium)
+    
+@mixin subheading
+    font-family: "Inter"
+    font-style: normal
+    font-size: var(--font-size-subheading)
+    line-height: var(--font-line-height-subheading)
+    font-weight: var(--font-weight-medium)
+    
+@mixin font-body
+    font-family: "Inter"
+    font-style: normal
+    font-size: var(--font-size-body)
+    line-height: var(--font-line-height-body)
+    font-weight: var(--font-weight-regular)
+    
+@mixin font-caption
+    font-family: "Inter"
+    font-style: normal
+    font-size: var(--font-size-small)
+    line-height: var(--font-line-height-small)
+    font-weight: var(--font-weight-regular)
+    
+@mixin font-button
+    font-family: "Inter"
+    font-style: normal
+    font-size: var(--font-size-button)
+    line-height: var(--font-line-height-button)
+    font-weight: var(--font-weight-medium)
+
+h1,
+.display-xl
+    @include display-xl
+
+h2,
+.display-l
+    @include display-l
+
+h3,
+.display-m
+    @include display-m
+
+h4,
+.display-s
+    @include display-s
+
+.page-heading
+    @include page-heading
+    
+
+.heading
+    @include heading
+
+.subheading
+    @include subheading
+
+.font-body
+    @include font-body
+
+.font-caption
+    @include font-caption
+
+.font-button
+    @include font-button
+
+
+/* Adjust the max-width accordingly. I am assuming its 767px */
+@media only screen and (max-width: 767px)
+    html
+        font-size: var(--base-fontsize-mobile)
+
+    :root
+        --font-size-h1: 2.33rem
+        --font-size-h2: 2rem
+        --font-size-h3: 1.67rem
+        --font-size-h4: 1.5rem
+        --font-size-subheading: 1.33rem
+        --font-size-button: 1.17rem
+        --font-size-body: 1.17rem
+        --font-size-small: 1rem
+
+        --font-line-height-h1: 2.67rem
+        --font-line-height-h2: 2.33rem
+        --font-line-height-h3: 2rem
+        --font-line-height-h4: 1.67rem
+        --font-line-height-subheading: 1.67rem
+        --font-line-height-button: 1.67rem
+        --font-line-height-body: 1.17rem
+        --font-line-height-small: 1.33rem
+    
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+    html
+        font-size: var(--base-fontsize-ipad)
+
+@media only screen and (min-width: 1024px) and (max-width: 1280px)
+    html
+        font-size: var(--base-fontsize-web)
+        
+@media only screen and (min-width: 1280px) and (max-width: 1600px)
+    html
+        font-size: 14px
+
+@media only screen and (min-width: 1600px)
+    html
+        font-size: 16px

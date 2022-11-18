@@ -1,0 +1,27 @@
+.ListItem
+    @include font-body
+    @include default-transition
+
+    padding: 0.67rem 1rem
+    cursor: pointer
+    outline: none
+    border-left: .17rem solid transparent
+    border-right: .17rem solid transparent
+    background-color: var(--color-white-faint)
+
+    &:hover
+        background-color: var(--color-white-light)
+
+    &[data-active="true"]
+        color: var(--color-primary-standard)
+        font-weight: 700
+        border-left-color: var(--color-primary-standard)
+
+    &[data-disable="true"]
+        color: var(--color-black-subdued)
+        cursor: not-allowed
+
+    &[data-cursor="true"],
+    &:focus,
+    &:focus-visible
+        background-color: var(--color-primary-faint)

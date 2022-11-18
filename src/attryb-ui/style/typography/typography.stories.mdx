@@ -1,0 +1,261 @@
+<!-- Typography.stories.mdx -->
+
+import { Meta, Typeset } from "@storybook/addon-docs/blocks"
+
+<Meta title="Fundamentals/ Typography/ Global" />
+
+export const typography = {
+    type: {
+        primary: '"Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
+    },
+    weight: {
+        regular: "400",
+        medium: "500",
+        bold: "700",
+    },
+    size: {
+        d1: 36,
+        d2: 24,
+        d3: 20,
+        d4: 17,
+        ph: 20,
+        h: 17,
+        su: 14,
+        bu: 12,
+        bo: 12,
+        ca: 10,
+    },
+}
+
+export const SampleText = "The quick brown fox jumps over the lazy dog."
+
+# Importing typography styling
+
+<div style={{fontWeight: 500, color: "#E91E63", fontSize: "2rem", padding: "1rem 0", background: "#FFF", borderRadius: "0.33rem"}}>
+    @import "attryb-ui/typography.sass"
+</div>
+
+---
+
+# Display
+Display is for titling various interface elements, such as empty states and modals.
+
+**Default Font:** Inter, sans-serif
+
+**Applicable Weights:** 400 (regular), 500 (medium), 700 (bold)
+
+## Display x-large
+
+**CSS ClassName:** `.display-xl`
+
+**Font Size:** 36px / 3rem
+
+**Line Height:** 40px / 3.25rem
+
+**Default Weight:** 500
+
+<Typeset
+    fontSizes={[
+        Number(typography.size.d1)
+    ]}
+    fontWeight={typography.weight.medium}
+    sampleText={SampleText}
+    fontFamily={typography.type.primary}
+/>
+
+## Display large
+
+**CSS ClassName:** `.display-l`
+
+**Font Size:** 24px / 2rem
+
+**Line Height:** 28px / 2.33rem
+
+**Default Weight:** 500
+
+<Typeset
+    fontSizes={[
+        Number(typography.size.d2)
+    ]}
+    fontWeight={typography.weight.medium}
+    sampleText={SampleText}
+    fontFamily={typography.type.primary}
+/>
+
+## Display medium
+
+**CSS ClassName:** `.display-m`
+
+**Font Size:** 20px / 1.67rem
+
+**Line Height:** 24px / 2rem
+
+**Default Weight:** 400
+
+<Typeset
+    fontSizes={[
+        Number(typography.size.d3)
+    ]}
+    fontWeight={typography.weight.regular}
+    sampleText={SampleText}
+    fontFamily={typography.type.primary}
+/>
+
+## Display small
+
+**CSS ClassName:** `.display-s`
+
+**Font Size:** 17px / 1.42rem
+
+**Line Height:** 20px / 1.67rem
+
+**Default Weight:** 400
+
+<Typeset
+    fontSizes={[
+        Number(typography.size.d4)
+    ]}
+    fontWeight={typography.weight.regular}
+    sampleText={SampleText}
+    fontFamily={typography.type.primary}
+/>
+
+# Headings
+Group of heading specific typographies
+
+**Default Font:** Inter, sans-serif
+
+**Applicable Weights:** 400 (regular), 500 (medium), 700 (bold)
+
+## Page Heading
+
+PageHeading is reserved for the title of a screen.
+
+**CSS ClassName:** `.page-heading`
+
+**Font Size:** 20px / 1.67rem
+
+**Line Height:** 24px / 2rem
+
+**Default Weight:** 700
+
+<Typeset
+    fontSizes={[
+        Number(typography.size.ph)
+    ]}
+    fontWeight={typography.weight.bold}
+    sampleText={SampleText}
+    fontFamily={typography.type.primary}
+/>
+
+## Heading
+
+Heading should always be used for titles of top-level sections of a screen. If the sections of a screen are represented by cards, each card’s title should use the Heading style.
+
+**CSS ClassName:** `.heading`
+
+**Font Size:** 17px / 1.42rem
+
+**Line Height:** 20px / 1.67rem
+
+**Default Weight:** 500
+
+<Typeset
+    fontSizes={[
+        Number(typography.size.h)
+    ]}
+    fontWeight={typography.weight.medium}
+    sampleText={SampleText}
+    fontFamily={typography.type.primary}
+/>
+
+## Sub Heading
+
+If a top-level section of a screen has subsections, use the Subheading style for titling those subsections. Subheading should never appear as the first element in a card. Only use with titles (vs. sections of content).
+
+**CSS ClassName:** `.subheading`
+
+**Font Size:** 14px / 1.17rem
+
+**Line Height:** 16px / 1.33rem
+
+**Default Weight:** 500
+
+<Typeset
+    fontSizes={[
+        Number(typography.size.su)
+    ]}
+    fontWeight={typography.weight.medium}
+    sampleText={SampleText}
+    fontFamily={typography.type.primary}
+/>
+
+# Standard Elements
+Typography definitions of common/standard elements of the page
+
+**Default Font:** Inter, sans-serif
+
+**Applicable Weights:** 400 (regular), 500 (medium), 700 (bold)
+
+## Button
+
+Typograpgy definition of button component.
+
+**CSS ClassName:** `.font-button`
+
+**Font Size:** 12px / 1rem
+
+**Line Height:** 12px / 1rem
+
+**Default Weight:** 500
+
+<Typeset
+    fontSizes={[
+        Number(typography.size.bu)
+    ]}
+    fontWeight={typography.weight.medium}
+    sampleText={SampleText}
+    fontFamily={typography.type.primary}
+/>
+
+## Body
+
+Standard font of the documents to be used in paragraphs or any other reading oriented text.
+
+**CSS ClassName:** `.font-body`
+
+**Font Size:** 12px / 1rem
+
+**Line Height:** 16px / 1.33rem
+
+**Default Weight:** 400
+
+<Typeset
+    fontSizes={[
+        Number(typography.size.bo)
+    ]}
+    fontWeight={typography.weight.regular}
+    sampleText={SampleText}
+    fontFamily={typography.type.primary}
+/>
+
+## Caption
+
+Caption is for providing details in places where content is compact and space is tight, like when it comes to data visualization.
+
+**CSS ClassName:** `.font-caption`
+
+**Font Size:** 10px / 0.83rem
+
+**Line Height:** 12px / 1rem
+
+**Default Weight:** 400
+
+<Typeset
+    fontSizes={[
+        Number(typography.size.ca)
+    ]}
+    fontWeight={typography.weight.regular}
+    sampleText={SampleText}
+    fontFamily={typography.type.primary}
+/>

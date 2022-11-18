@@ -1,0 +1,24 @@
+.FieldLabel
+    @include font-button
+    @include flex(row, center, space-between)
+
+    color: var(--color-black-light)
+    align-self: stretch
+
+    .label-text
+        display: flex
+        align-items: center
+
+    .chars
+        @include font-caption
+
+        display: flex
+        align-items: baseline
+        justify-content: flex-end
+
+        &[data-filled="true"]
+            color: var(--color-danger-standard)
+
+    .EditableContent
+        font-weight: 500
+        padding: 0

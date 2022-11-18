@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Base states of Editable Content Block component Should render correctly 1`] = `
+<div
+  className="UsecaseListItem"
+  data-active={false}
+  data-disable={false}
+  data-focus={false}
+  data-testid="usecase-list-item"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  tabIndex="-1"
+>
+  <img
+    className="usecase-icon"
+    src="/assets/icons/usecase/blog_intro.svg"
+  />
+  <div
+    className="text"
+  />
+</div>
+`;

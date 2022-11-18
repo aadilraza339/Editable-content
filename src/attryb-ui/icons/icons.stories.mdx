@@ -1,0 +1,47 @@
+
+import { Meta } from "@storybook/addon-docs/blocks"
+
+<Meta title="Fundamentals/ Icons/ Global" />
+
+### Note: For all icons need we are using React Icons library. Read more at: [React-icons](https://react-icons.github.io/react-icons "React Icons")
+
+---
+
+# What is React-icons?
+React-icons is a small library that helps you add icons (from all different icon libraries) to your React apps. It delivers the icons to your app as components so they're easier to work with, and it lets you style them so they're consistent with the overall style of your app. React-icons uses ES6 features to import the icons into your React app. And it makes it so that only the icons you actually use from each library get imported.
+
+React-icons works with a bunch of different icon libraries like Font Awesome, Material UI, Bootstrap icons, and many others.
+
+# How to Install React-icons?
+
+To install the `react-icons` library, do the following:
+
+1. In your project folder, open the terminal of your code editor.
+2. Run the command `npm install react-icons` to install the library in your project folder.
+
+This might take some time depending on the speed of your system. Once it's done, you are set to use your React icons.
+
+# How to Import Icons with React-icons?
+Go to the [React-icons](https://react-icons.github.io/react-icons "React Icons") page. You will see a number of icon libraries that you can use. Each library of icons has an import code for it.
+
+# Code Example:
+```jsx
+import React, { Component } from 'react';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { BsHeartFill, BsHeart } from "react-icons/bs";
+
+class Icons extends Component {
+  render() {
+    return (
+    <div>
+      <FaHeart />
+      <FaRegHeart />
+      <BsHeartFill />
+      <BsHeart />
+    </div>
+    ) 
+  }
+}
+
+export default Icons
+```
