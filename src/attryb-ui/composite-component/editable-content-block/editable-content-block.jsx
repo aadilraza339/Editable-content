@@ -6,6 +6,7 @@ import React, { useEffect, useRef, useState, useCallback } from "react"
 import { useClickOutside } from "../../hooks"
 import useKeyPress from '../../hooks/useKeyPress/useKeyPress.jsx'
 import EditableContentBlockFooter from "./editable-content-block-footer"
+import { motion } from "framer-motion"
 
 const EditableContentBlock = ({
   formatting = "plain",
@@ -293,7 +294,7 @@ const EditableContentBlock = ({
   }, [editMode, manualSave, saveContent])
 
   return (
-    <div
+    <motion.div
       ref={thisEl}
       data-testid="editable-content-block"
       animate={
@@ -337,7 +338,7 @@ const EditableContentBlock = ({
         maxChars={maxCharsLimit}
         onClick={saveContent}
       />
-    </div>
+    </motion.div>
   )
 }
 

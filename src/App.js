@@ -1,15 +1,18 @@
 
 import './App.scss';
 import EditableContent from './editable-content';
+import { motion } from "framer-motion"
 
 function App() {
   return (
     <div className="App">
       <h1>
-        Editable content component
+        Editable component
       </h1>
       <div className='center'>
-        <EditableContent/>
+
+<EditableContent/>
+      
       </div>
     </div>
   );
