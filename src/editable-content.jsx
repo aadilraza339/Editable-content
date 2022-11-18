@@ -1,14 +1,19 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import { EditableContentBlock } from './attryb-ui'
 import DOMPurify from "dompurify";
 
-export default function EditableContent() {
+export default function EditableContent({title, setTitle}) {
     const [editMode, setEditMode] = useState(false)
+    useEffect(()=>{
+        console.log(editMode,"editModeeditMode===");
+
+    },[editMode])
+
   return ( 
     <EditableContentBlock
                 editMode={editMode}
 
-                maxCharsLimit={400}
+                maxCharsLimit={0}
                 manualSave={false}
                 allowEmpty={true}
                 onClick={() => {
@@ -16,6 +21,7 @@ export default function EditableContent() {
                     setEditMode(true)
                 }}
                 onBlur={(event) => {
+                    console.log("blur....");
                     // const relatedTarget =
                     //     event?.relatedTarget 
                     // if (relatedTarget) relatedTarget.click()
@@ -24,8 +30,12 @@ export default function EditableContent() {
                 responseCallback={(
                     res
                 ) => {
-                    console.log({ saving: res })
-                    // if (res?.innerHTML) setListContent(res?.innerHTML)
+                    console.log( res,"response call back")
+                    if (res?.innerHTML) {
+                        setTitle(res?.innerHTML)
+                        // console.log( res,"response call back21212")
+                    
+                    }
                 }}
             >
                 {/* 
@@ -36,7 +46,7 @@ export default function EditableContent() {
                         */}
                 <div
                     dangerouslySetInnerHTML={{
-                        __html: DOMPurify.sanitize(""),
+                        __html: DOMPurify.sanitize(title),
                     }}
                 />
             </EditableContentBlock>

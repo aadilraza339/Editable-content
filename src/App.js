@@ -1,9 +1,11 @@
 
+import { useState } from 'react';
 import './App.scss';
 import EditableContent from './editable-content';
-import { motion } from "framer-motion"
+
 
 function App() {
+  const [title, setTitle] = useState("Here is plain text till now")
   return (
     <div className="App">
       <h1>
@@ -11,8 +13,11 @@ function App() {
       </h1>
       <div className='center'>
 
-<EditableContent/>
-      
+        <EditableContent
+          title={title}
+          setTitle={setTitle}
+        />
+
       </div>
     </div>
   );

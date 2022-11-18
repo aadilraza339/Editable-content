@@ -16,7 +16,7 @@ const EditableContentBlock = ({
   editMode = false,
   children,
   responseCallback = () => {
-    
+
   },
   ...rest
 }) => {
@@ -74,6 +74,7 @@ const EditableContentBlock = ({
   const getEvaluatedEditState = useCallback(
     // eslint-disable-next-line indent
     currentEditState => {
+
       /**
        * If component is already in edit mode, keeps the component in edit mode
        * We don't want to toggle the edit mode on each and every outside click
@@ -122,14 +123,15 @@ const EditableContentBlock = ({
     const tempDiv = document.createElement("div")
     tempDiv.innerHTML = html
 
-    const firstChild = tempDiv?.childNodes[0]
-    return firstChild?.innerHTML ?? ""
+    // const firstChild = tempDiv?.childNodes[0]
+    return tempDiv?.outerHTML 
   }
   /**
    * Holds the procedure(s) to execute when saving the component
    * i.e giving the updated response back to the parent component
    */
   const saveContent = useCallback(() => {
+    
     /**
      * If we are not allowing empty text then we will not exit
      * edit mode when the text is empty
@@ -145,12 +147,19 @@ const EditableContentBlock = ({
       responseCallback(response)
       setInitialHTMLFromChildren(response?.innerHTML)
     }
-  }, [error?.status, formatting, responseCallback, initialHTMLFormChildren])
+  }, [
+    error?.status, 
+    formatting, 
+    responseCallback,
+     initialHTMLFormChildren
+    ])
   /**
    * handling outside click
    */
   const onOutsideClick = (isOutside, event) => {
     // if (!event?.currentTarget) return
+
+    console.log("you too..");
     if (isOutside) saveContent()
     return
   }
@@ -234,6 +243,8 @@ const EditableContentBlock = ({
      * When component first renders, set the initialHTML state with the
      * innerHTML of children prop as passed by parent component
      */
+    
+
     if (!childEl?.current) return
     setInitialHTMLFromChildren(childEl?.current?.innerHTML)
   }, [])
@@ -242,6 +253,7 @@ const EditableContentBlock = ({
    * Handles the case when user presses `Esc` key while in edit mode
    */
   useEffect(() => {
+    
     /**
      * Do nothing if there's no Esc event object
      */
@@ -281,18 +293,26 @@ const EditableContentBlock = ({
   ])
 
   useEffect(() => {
+    
     /**
      * If edit mode is enabled focus on the editable div.
      * This shows the cursor when click on the component
      */
-    if (editMode) childEl?.current?.focus()
+    console.log("sdasdsxxw",manualSave,editMode);
+    if (!editMode) return
+    childEl?.current?.focus()
     /**
      * If manual save is diabled, simply save the content on
      * edit mode toggle
      */
-    if (!manualSave) saveContent()
-  }, [editMode, manualSave, saveContent])
-
+    
+    // if (!manualSave) saveContent()
+  }, [editMode,
+     manualSave, 
+     saveContent])
+// useEffect(()=>{
+//   console.log("why this kola bery");
+// },[editMode])
   return (
     <motion.div
       ref={thisEl}
@@ -336,7 +356,7 @@ const EditableContentBlock = ({
         error={error}
         charsEl={charsEl}
         maxChars={maxCharsLimit}
-        onClick={saveContent}
+        // onClick={saveContent}
       />
     </motion.div>
   )
